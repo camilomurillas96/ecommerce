@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
 
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ url('./css/style.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
