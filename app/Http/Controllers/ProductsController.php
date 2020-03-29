@@ -68,6 +68,9 @@ class ProductsController extends Controller
     public function show($id)
     {
         //muestra el producto con el id que le pasemos
+        $product = Product::find($id);
+
+        return view('products.show', ['product' => $product]);
     }
 
     /**
