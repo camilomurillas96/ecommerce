@@ -3,9 +3,11 @@
     margin-bottom: 0px;
 }
 
+
 .big-padding{
     padding: 30px;
 }
+
 
 .blue-grey{
     background-color: #37474f;
@@ -19,6 +21,11 @@
     color: white;
 }
 
+
+.inline-block{
+    display: inline-block;
+}    
+
 .table{
     background-color: white;
 }
@@ -29,3 +36,6 @@
     right: 2em;
     z-index: 100;
 }
+
+
+ 
