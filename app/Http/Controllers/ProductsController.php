@@ -93,6 +93,17 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //actualiza lo que se envio en edit al producto con el id
+        $product = Product::find($id);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.edit", ["product" => $product]);
+        }
     }
 
     /**
