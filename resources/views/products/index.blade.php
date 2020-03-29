@@ -32,5 +32,9 @@
 
     </table>
 </div>
-
+<div class="floating">
+    <a href="{{url('/products/create')}}" class="btn btn-primary btn-fab">
+        <i class="material-icons">add</i>
+    </a>
+</div>
 @endsection
