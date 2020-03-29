@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Product;
 
+use Illuminate\Support\Facades\Auth;
+
 class ProductsController extends Controller
 {
     /**
@@ -42,6 +44,18 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //recibe el formulario de create, para luego el nuevo producto
+        $product = new Product;
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+        $product->user_id = Auth::user()->id;
+
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.create");
+        }
     }
 
     /**
