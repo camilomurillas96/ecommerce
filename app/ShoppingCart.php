@@ -7,10 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class ShoppingCart extends Model
 {
     // Mass assignament
-    protected $fillable = ["status"];
+    protected $fillable = ['status'];
+
+    public function inShoppingCarts(){
+        return $this->hasMany('App\InShoppingCart');
+    }
+
+    public function products(){
+        return $this->belongsToMany('App\Product','in_shopping_carts');
+    }
+
     //
     public function productsSize(){
-        return $this->id;
+        return $this->products()->count();
     }
 
     public static function findOrCreateBySessionID($shopping_cart_id){
